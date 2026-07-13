@@ -25,8 +25,8 @@ jobs:
           server-password: MAVEN_PASSWORD
 
       - name: Deploy package
-        env:
-          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
-        run: mvn -B deploy -s /home/runner/.m2/settings.xml --no-transfer-progress
+        run: mvn -B -ntp deploy
         working-directory: pagila-entity
+        env:
+          MAVEN_USERNAME: ${{ github.actor }}
+          MAVEN_PASSWORD: ${{ secrets.GH_PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}

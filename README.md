@@ -106,7 +106,7 @@ It is **not** intended for direct exposure in API contracts.
 
 ```xml
 <dependency>
-    <groupId>co.co.d3vlin</groupId>
+    <groupId>co.d3vlin</groupId>
     <artifactId>pagila-entity</artifactId>
     <version>1.0.0</version>
 </dependency>

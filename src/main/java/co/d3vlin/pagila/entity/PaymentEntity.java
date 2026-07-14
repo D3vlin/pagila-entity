@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -23,15 +24,15 @@ public class PaymentEntity {
     private Integer id;
 
     @ManyToOne
-    @Column(name = "customer_id")
+    @JoinColumn(name = "customer_id")
     private CustomerEntity customerEntity;
 
     @ManyToOne
-    @Column(name = "staff_id")
+    @JoinColumn(name = "staff_id")
     private StaffEntity staffEntity;
 
     @ManyToOne
-    @Column(name = "rental_id")
+    @JoinColumn(name = "rental_id")
     private RentalEntity rentalEntity;
 
     @Column(name = "amount")

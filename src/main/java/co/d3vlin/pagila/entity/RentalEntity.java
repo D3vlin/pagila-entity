@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -26,18 +27,18 @@ public class RentalEntity {
     private LocalDateTime rentalDate;
 
     @ManyToOne
-    @Column(name = "inventory_id")
+    @JoinColumn(name = "inventory_id")
     private InventoryEntity inventoryEntity;
 
     @ManyToOne
-    @Column(name = "customer_id")
+    @JoinColumn(name = "customer_id")
     private CustomerEntity customerEntity;
 
     @Column(name = "return_date")
     private LocalDateTime returnDate;
 
     @ManyToOne
-    @Column(name = "staff_id")
+    @JoinColumn(name = "staff_id")
     private StaffEntity staffEntity;
 
     @Column(name = "last_update")

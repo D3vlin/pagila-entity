@@ -7,6 +7,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import org.hibernate.annotations.JdbcTypeCode;
 
 import java.sql.Types;
 import java.time.Year;
+import java.util.List;
 
 @Entity
 @Table(schema = "public", name = "film")
@@ -36,11 +38,11 @@ public class FilmEntity  {
     private Year releaseYear;
 
     @ManyToOne
-    @Column(name = "language_id")
+    @JoinColumn(name = "language_id")
     private LanguageEntity languageEntity;
 
     @ManyToOne
-    @Column(name = "original_language_id")
+    @JoinColumn(name = "original_language_id")
     private LanguageEntity originalLanguageEntity;
 
     @Column(name = "rental_duration")
@@ -64,8 +66,8 @@ public class FilmEntity  {
     private java.time.LocalDateTime lastUpdate;
 
     @Column(name = "special_features")
-    private String specialFeatures;
+    private List<String> specialFeatures;
 
     @Column(name = "fulltext")
-    private String fulltext;
+    private String fullText;
 }

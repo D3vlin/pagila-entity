@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -23,11 +24,11 @@ public class InventoryEntity {
     private Integer id;
 
     @ManyToOne
-    @Column(name = "film_id")
+    @JoinColumn(name = "film_id")
     private FilmEntity filmEntity;
 
     @ManyToOne
-    @Column(name = "store_id")
+    @JoinColumn(name = "store_id")
     private StoreEntity storeEntity;
 
     @Column(name = "last_update")

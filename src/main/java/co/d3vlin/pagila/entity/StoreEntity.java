@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,12 +24,12 @@ public class StoreEntity {
     @Column(name = "store_id")
     private Integer id;
 
-    @ManyToOne
-    @Column(name = "manager_staff_id")
+    @OneToOne
+    @JoinColumn(name = "manager_staff_id", nullable = false, unique = true)
     private StaffEntity managerStaffEntity;
 
     @ManyToOne
-    @Column(name = "address_id")
+    @JoinColumn(name = "address_id", nullable = false)
     private AddressEntity addressEntity;
 
     @Column(name = "last_update")

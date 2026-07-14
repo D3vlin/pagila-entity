@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -24,7 +25,7 @@ public class CustomerEntity {
     private Integer id;
 
     @ManyToOne
-    @Column(name = "store_id")
+    @JoinColumn(name = "store_id")
     private StoreEntity storeEntity;
 
     @Column(name = "first_name")
@@ -37,7 +38,7 @@ public class CustomerEntity {
     private String email;
 
     @ManyToOne
-    @Column(name = "address_id")
+    @JoinColumn(name = "address_id")
     private AddressEntity addressEntity;
 
     @Column(name = "activebool")

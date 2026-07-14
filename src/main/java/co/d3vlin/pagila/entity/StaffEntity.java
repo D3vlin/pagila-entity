@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,14 +30,14 @@ public class StaffEntity {
     private String lastName;
 
     @ManyToOne
-    @Column(name = "address_id")
+    @JoinColumn(name = "address_id", nullable = false)
     private AddressEntity addressEntity;
 
     @Column(name = "email")
     private String email;
 
     @ManyToOne
-    @Column(name = "store_id")
+    @JoinColumn(name = "store_id", nullable = false)
     private StoreEntity storeEntity;
 
     @Column(name = "active")

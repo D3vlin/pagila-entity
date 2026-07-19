@@ -14,7 +14,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(schema = "public", name = "actor")
+@Table(schema = "public", name = "address")
 @Getter
 @Setter
 public class AddressEntity {
